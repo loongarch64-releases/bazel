@@ -34,6 +34,7 @@ echo "🏃 Running build inside container..."
 
 docker run --rm \
     --platform "${PLATFORM}" \
+    --ulimit nofile=65536:65536 \
     -v "${ROOT_DIR}:/src:z" \
     -w /src \
     -e VERSION="${VERSION}" \

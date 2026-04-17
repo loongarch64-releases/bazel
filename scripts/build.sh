@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+ulimit -n 65536
+
 UPSTREAM_OWNER=bazelbuild
 UPSTREAM_REPO=bazel
 VERSION="${1}"

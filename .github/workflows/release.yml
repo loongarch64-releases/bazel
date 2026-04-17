@@ -51,5 +51,5 @@ jobs:
         if: steps.get_version.outputs.skip_workflow != 'true'
         run: |
           VERSION="${{ steps.get_version.outputs.version }}"
-          chmod +x ./scripts/release.sh "$VERSION"
+          chmod +x ./scripts/release.sh
           ./scripts/release.sh "$VERSION"

@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Check version
+      - name: Check Version
         id: get_version
         run: |
           # 1. 获取上游最新版本
@@ -52,7 +52,5 @@ jobs:
         if: steps.get_version.outputs.skip_workflow != 'true'
         run: |
           VERSION="${{ steps.get_version.outputs.version }}"
-          gh release create "$VERSION" \
-            --title "${UPSTREAM_REPO} $VERSION" \
-            --notes "Automated build for version ${VERSION} based on ${UPSTREAM_OWNER}/${UPSTREAM_REPO}" \
-            dists/$VERSION/*
+          chmod +x ./scripts/release.sh
+          ./scripts/release.sh "$VERSION"
