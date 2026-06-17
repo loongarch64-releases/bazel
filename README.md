@@ -27,14 +27,18 @@ This repository contains the LoongArch64 build configuration and scripts for **[
 3. **Run the build script**:
    ```bash
    ./scripts/build.sh <version>
+   eg:  ./scripts/build.sh 7.6.0
    ```
+
    *Or build inside a Docker container:*
    ```bash
    ./scripts/build_in_docker.sh <version>
+   eg: ./scripts/build_in_docker.sh 7.6.0
    ```
 
 4. **Get the binary**:
    The compiled binaries will be available in the `dists/<version>` directory.
+   eg: dists/7.6.0
 
 ## Development
 
